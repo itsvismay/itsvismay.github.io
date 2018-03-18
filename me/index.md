@@ -3,12 +3,16 @@ title: About
 layout: about
 ---
 
-# Hello! 
+# Hi
 
-I'm vismay. This needs to be updated later.
+* My name is vismay. I'm a grad student. This needs to be updated later.
 
-#Contact Info
-[vismay@cs.toronto.edu]
-[vismay@tamu.edu]
+# Contact Info
 
-Calendar [https://calendar.google.com/calendar?cid=dmlzbWF5QHRhbXUuZWR1]
+* [vismay@cs.toronto.edu](mailto: vismay@cs.toronto.edu)
+
+* [vismay@tamu.edu](mailto: vismay@tamu.edu)
+
+* [vismay@utexas.edu](mailto: vismay@utexas.edu)
+
+* [Calendar](https://calendar.google.com/calendar?cid=dmlzbWF5QHRhbXUuZWR1)

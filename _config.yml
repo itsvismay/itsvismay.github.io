@@ -1,5 +1,5 @@
 ---
-title:Itsvismay.Github.Io
+title: Itsvismay.Github.Io
 timezone: America/Chicago
 collections:
   posts:
@@ -9,8 +9,8 @@ collections:
     title: Uploads
     output: true
 permalink: "/blog/:title"
-name: 
-description: 
+name: "Home"
+description: "me"
 google_verification: 
 include:
 - ".htaccess"
