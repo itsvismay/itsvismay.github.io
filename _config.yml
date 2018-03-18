@@ -1,6 +1,6 @@
 ---
-title: Blog.Erictreacy.Github.Io
-timezone: America/New_York
+title:Itsvismay.Github.Io
+timezone: America/Chicago
 collections:
   posts:
     title: Posts
@@ -9,8 +9,8 @@ collections:
     title: Uploads
     output: true
 permalink: "/blog/:title"
-name: Writing
-description: A blog on Jekyll and GitHub Pages
+name: 
+description: 
 google_verification: 
 include:
 - ".htaccess"
