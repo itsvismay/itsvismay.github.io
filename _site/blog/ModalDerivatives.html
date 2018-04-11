@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>itsvismay.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Notes on Modal Derivatives</title>
+    
+
+    <meta name="description" content="me">
+
+    
+
+    <link rel="icon" href="/assets/img/blog.png">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Roboto|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+    <h1><a href="/">Home</a></h1>
+    <ul>
+        
+        <li>
+            <a href="/me">About</a>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="post">
+
+
+    <div class="post__title">
+    	<h1>Notes on Modal Derivatives</h1>
+    </div>
+    <div class="post__date">
+    	<p>April 8, 2018</p>
+    </div>
+    <div class="post__meta">
+    	<p></p>
+    </div>
+    <div class="post__content"?>
+        <h2 id="read-this-first">Read this first</h2>
+<p>I’m assuming you have a bit of background on modal analysis and you’ve read (or looked at) Real-Time Subspace Integration for StVK Deformable Models [Barbic-2005] and Part 2 of the Siggraph2012 Course Notes on <a href="femdefo.org">femdefo.org</a>. This should provide a more some intuition about why it works, and a more thorough derivation. I’m using the same notation and figures as in the course notes on <a href="femdefo.org">femdefo.org</a>.</p>
+
+<h2 id="modal-analysis">Modal Analysis</h2>
+<p>Requires you to solve the general eigenvalue problem in order to find the eigenvalues <script type="math/tex">\lambda</script> and eigenvectors <script type="math/tex">x</script> of the system.</p>
+
+<script type="math/tex; mode=display">Kx = \lambda Mx \tag{1}</script>
+
+<p>The eigenvals <script type="math/tex">\lambda</script> determine the energy state of the object’s transformation described in <script type="math/tex">x</script>. <script type="math/tex">\lambda_i = 0</script> means <script type="math/tex">x_i</script> describes a rigid transformation.</p>
+
+<p>For model reduction, we want low energy states of the object, so we select <script type="math/tex">% <![CDATA[
+r << n %]]></script> of the smallest <script type="math/tex">\lambda_i</script> where <script type="math/tex">% <![CDATA[
+0<i<r %]]></script> and create a reduced transformation basis <script type="math/tex">\psi = [x_0, x_1, ..., x_r]</script>.</p>
+
+<p>When the object is wiggled, it tends to move into the low energy states, so our reduced  transformation basis <script type="math/tex">\psi</script> should capture most of the object’s range of motion. If deformation is really big, it would have a high energy, and its motion wouldn’t be captured by <script type="math/tex">\psi</script>. Thats why modal analysis doesn’t work for large deformations.</p>
+
+<p>This is usually computed at the object’s rest position, but it can be done at other positions too. As long as the displacements are small, you can compute any deformation around the position at which you compute the basis <script type="math/tex">\psi</script> as a linear combination of <script type="math/tex">\psi_0, \psi_1,...\psi_r</script>. So for any small displacement <script type="math/tex">u</script></p>
+
+<script type="math/tex; mode=display">u = u(p) = \sum_{i=0}^r \psi[,i] p[i] \tag{17}</script>
+
+<p>where <script type="math/tex">p_i</script> is the weight (or strength) of <script type="math/tex">\psi_i</script> needed for that <script type="math/tex">u</script>. This equation (eq 17) shows modal analysis is just the <em>first order</em> taylor expansion of <script type="math/tex">u(p)</script> around the object’s rest position. Thats why the deformations described by this basis are similar to linear elasticity. Basis <script type="math/tex">\psi</script> is calculated on a constrant <script type="math/tex">K</script> at rest, and as the deformations get further away from rest, their accuracy decreases.</p>
+
+<h2 id="modal-derivatives">Modal Derivatives</h2>
+<p>captures the second order taylor approximation term in function <script type="math/tex">u(p)</script>. So the deformations are more accurate even if you go further away from rest position.</p>
+
+<script type="math/tex; mode=display">u = u(p) = \sum_{i=0}^r \psi[,i] p[i] + \sum_{i=0}^r\sum_{j=0}^r \frac{1}{2}\phi[i,j]p[i]p[j] \tag{17}</script>
+
+<p>In the equation above, term <script type="math/tex">\psi_i</script> corresponds to the first derivative of <script type="math/tex">u</script> w.r.t <script type="math/tex">p</script>, <script type="math/tex">\frac{du}{dp}</script> and the term <script type="math/tex">\phi_{ij} = \frac{d^2u}{dp^2}</script>. This is just from the definition of a taylor expansion. We already know what the <script type="math/tex">\psi</script> terms are, we now need to find the <script type="math/tex">\phi</script> terms.</p>
+
+<p>There’s two ways to do this. Both are included in Jernej Barbic’s <a href="http://www-bcf.usc.edu/~jbarbic/thesis-barbic.pdf">thesis</a>, but I prefer the method described in the SIGGRAPH course notes.</p>
+
+<p>Since any small deformation around rest can be described as <script type="math/tex">u(p)</script> there is some force <script type="math/tex">f(u(p))</script> that will get the object to that deformation. Choose the force to be</p>
+
+<script type="math/tex; mode=display">f(u(p)) = M\psi \Lambda p \tag{13}</script>
+
+<p>where <script type="math/tex">\Lambda</script> is a diagonal matrix of eigenvalues. This equation describes the force for any small deformation.</p>
+
+<script type="math/tex; mode=display">\frac{df}{du}\frac{du}{dp} = M \psi \Lambda \tag{14}</script>
+
+<p>Take the derivative of (13) to move towards finding <script type="math/tex">\frac{d^u}{dp^2}</script>. Couple of things to note in (14): <script type="math/tex">\frac{df}{du}=K(u(p))</script> the stiffness matrix and <script type="math/tex">M \psi \Lambda</script> is a constant w.r.t <script type="math/tex">p</script>.</p>
+
+<p>Taking the derivative of 14, and being a little (very) careless with notation (<script type="math/tex">\frac{du}{dp_i}</script> should all be labeled properly) we get</p>
+
+<script type="math/tex; mode=display">\frac{df}{du}\frac{d^2u}{dp^2} + \frac{dK}{dp}\frac{du}{dp} = 
+\frac{df}{du}\frac{d^2u}{dp^2} + \frac{dK}{du}\frac{du}{dp}\frac{du}{dp} = 0</script>
+
+<p>where <script type="math/tex">\frac{dK}{du} = H</script> is the Hessian matrix <strong>w.r.t forces</strong>.</p>
+
+<script type="math/tex; mode=display">K\frac{d^2u}{dp_i dp_j} = -H\frac{du}{dp_i}\frac{du}{dp_j} = -(H:\frac{du}{dp_i})\frac{du}{dp_j}</script>
+
+<p>Since H is a rank 3 tensor, doing a double dot product (:) with a vector results in a rank 2 matrix. Also, remember that <script type="math/tex">\frac{du}{dp_i} = \psi_i</script></p>
+
+<script type="math/tex; mode=display">-(H:\frac{du}{dp_i})\frac{du}{dp_j} = \sum_{ij} H\psi[i] \cdot \psi[j] = v_{ij}</script>
+
+<p>where <script type="math/tex">H\psi[i]</script> is a rank 3 sensor multiplied by a vector, which results in a matrix. When multiplied by another vector <script type="math/tex">\psi[j]</script> you’ll get a vector <script type="math/tex">v_{ij}</script>. The last step is to multiply the vector by <script type="math/tex">K^{-1}</script></p>
+
+<script type="math/tex; mode=display">K^{-1} K\frac{d^2u}{dp_i dp_j} = K^{-1} v_{ij} = \frac{d^2u}{dp_i dp_j} = \phi_{ij}</script>
+
+<p>Once you have the modal derivatives <script type="math/tex">\frac{d^2u}{dp_i dp_j}</script>, you need to do another Mass-PCA to find a linearly independent basis because <script type="math/tex">\phi</script> are not linearly independent.</p>
+
+<p>This is all explained further in the Real Time Subspace… paper and in the course notes.</p>
+
+
+    </div>
+</div>
+
+        <div class="footer">
+            <p title="Took this theme from here: http://erictreacy.me">&copy; 2017 </p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+</body>
+
+</html>
