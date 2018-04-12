@@ -8,7 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-permalink: "/blog/:title"
+permalink: "/notes/:title"
 name: "Home"
 description: "me"
 google_verification: 
