@@ -121,7 +121,7 @@ hr {
 	padding-top: 10px;
 	color: #777;
 	margin-top: 5rem;
-	
+
 	@media screen and (max-width: $br) {
 		display: block;
 	}
@@ -137,7 +137,7 @@ hr {
 			padding-left: 5px;
 		}
 	}
-	
+
 		p {
 		font-size: 1em;
 		line-height: 150%;
@@ -159,7 +159,7 @@ hr {
 	padding-bottom: 30px;
 	&__back {
 		a {
-		
+
 		}
 	}
 	&__title {
@@ -173,6 +173,16 @@ hr {
 			padding-right: 10px;
 			padding-bottom: 2px;
 			text-decoration: none;
+		}
+	}
+	&__subtitle {
+		display: block;
+		margin-top: 5px;
+		margin-bottom: 3px;
+		h2 {
+			display: inline-block;
+			font-size: 1em;
+			font-weight: bolder;
 		}
 	}
 	&__date {
@@ -206,8 +216,8 @@ hr {
 			margin-bottom: 15px;
 		}
 		a {
-			padding-bottom: 1px;			
-			&:hover {			
+			padding-bottom: 1px;
+			&:hover {
 				text-decoration: none;
 			}
 		}
