@@ -94,7 +94,7 @@ This paper does the following:</p>
 </ul>
 
 <h2 id="continuum-lookahead">Continuum Lookahead</h2>
-<p><img src="../assets/img/20062020-Golas-LongRange/Fig3-4.png" alt="Figure 3 and 4" />
+<p><img src="../assets/img/20062020-Golas-LongRange/Fig3-4.png" alt="postimg" />
 Agent orange has preffered velocity $v_p$ calculated from the gobal step. That is updated through the optimization problem in Eq 2 of the paper to $\hat{v}$.</p>
 
 <p>Look ahead is determined by the future state of the crowd $x_i$ where $i$ is the amount of time to look ahead. Uncertainty is accounted for by making the underlying grid larger and larger for each $i$ until $i_{max}$.</p>
@@ -107,7 +107,7 @@ Agent orange has preffered velocity $v_p$ calculated from the gobal step. That i
 </ul>
 
 <h2 id="discrete-lookahead">Discrete Lookahead</h2>
-<p><img src="../assets/img/20062020-Golas-LongRange/Fig5.png" alt="Figure 5" />
+<p><img src="../assets/img/20062020-Golas-LongRange/Fig5.png" alt="postimg" />
 Reciprocal velocity obstable (RVO) for collision avoidance. Colliding velocities of agent and neighbors become a constraint in the optimization. One optimization per agent, but lots of constraints. The solution is to group distant agents into clusters.</p>
 
 <h2 id="curtailing-lookahead">Curtailing Lookahead</h2>
@@ -131,7 +131,14 @@ Reciprocal velocity obstable (RVO) for collision avoidance. Colliding velocities
         </div>
     </div>
 
-
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 </body>
 

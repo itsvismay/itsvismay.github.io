@@ -20,7 +20,7 @@ Crowd sims usually have 2 steps: Global and Local.
 + Local step involves Local Collision Avoidance (LCA) with other agens.
 
 ## Continuum Lookahead
-![Figure 3 and 4][Fig3-4]
+![postimg][Fig3-4]
 Agent orange has preffered velocity $v_p$ calculated from the gobal step. That is updated through the optimization problem in Eq 2 of the paper to $\hat{v}$.
 
 Look ahead is determined by the future state of the crowd $x_i$ where $i$ is the amount of time to look ahead. Uncertainty is accounted for by making the underlying grid larger and larger for each $i$ until $i_{max}$.
@@ -31,7 +31,7 @@ Look ahead is determined by the future state of the crowd $x_i$ where $i$ is the
 + Avoids calculating global pressure to exert forces
 
 ## Discrete Lookahead
-![Figure 5][Fig5]
+![postimg][Fig5]
 Reciprocal velocity obstable (RVO) for collision avoidance. Colliding velocities of agent and neighbors become a constraint in the optimization. One optimization per agent, but lots of constraints. The solution is to group distant agents into clusters.
 
 ## Curtailing Lookahead

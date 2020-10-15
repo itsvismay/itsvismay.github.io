@@ -5,7 +5,7 @@ layout: post
 tags: research
 ---
 
-## 
+## Motion is decision making
 Motion is fundamentally a decision making problem. An individual agent must decide how to move towards a goal. At the aggregate level, the decisions of the individual affect the population and vice-versa. Macroeconomics studies the behavior and decision making of populations. Therefore I believe recent classical macroeconomic models can be applied to crowd motion.
 
 ## Caveats
