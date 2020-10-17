@@ -2,7 +2,7 @@
 title: Notes on Hybrid Long-Range Collision Avoidance for Crowds
 date: 2020-06-20 19:00:00 -05:00 
 layout: post
-tags: research
+tags: paper
 ---
 
 ## Based on:

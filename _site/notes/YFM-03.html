@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>itsvismay.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Computing Equilibrium</title>
+    
+
+    <meta name="description" content="me">
+
+    
+
+    <link rel="icon" href="/assets/img/blog.png">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Roboto|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Computing Equilibrium | Itsvismay.Github.Io</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Computing Equilibrium" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Yale Financial Markets Lecture 3" />
+<meta property="og:description" content="Yale Financial Markets Lecture 3" />
+<link rel="canonical" href="http://localhost:4000/notes/YFM-03" />
+<meta property="og:url" content="http://localhost:4000/notes/YFM-03" />
+<meta property="og:site_name" content="Itsvismay.Github.Io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-13T19:00:00-05:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/notes/YFM-03"},"url":"http://localhost:4000/notes/YFM-03","headline":"Computing Equilibrium","description":"Yale Financial Markets Lecture 3","dateModified":"2020-10-13T19:00:00-05:00","datePublished":"2020-10-13T19:00:00-05:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+    <h1><a href="/">Home</a></h1>
+    <ul>
+        
+        <li>
+            <a href="/me">About</a>
+        </li>
+        
+        <li>
+            <a href="/projects">Projects</a>
+        </li>
+        
+        <li>
+            <a href="/notes">Notes</a>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="post">
+
+    <div class="post__title">
+    	<h1>Computing Equilibrium</h1>
+    </div>
+    <div class="post__subtitle">
+      <h2></h2>
+    </div>
+    <div class="post__date">
+    	<p>October 13, 2020</p>
+    </div>
+    <div class="post__meta">
+    	<p></p>
+    </div>
+    <div class="post__content"?>
+        <h1 id="yale-financial-markets-lecture-3">Yale Financial Markets Lecture 3</h1>
+
+<p>In equilibrium, the final allocation maximizes total welfare:</p>
+
+<script type="math/tex; mode=display">\sum_i W_i(x,m) = u_i(x) + m</script>
+
+<p>Where $W_i$ is welfare of agent $i$ and $u_i(x)$ is the utility of agent $i$ for the quantity $x$, and $m$ is the utility of money.</p>
+
+<h1 id="example-with-2-agents">Example with 2 agents</h1>
+
+<p>With two different goods $x, y$.</p>
+
+<p>Agent A:
+Welfare: $W^A(x, y) = 100x - \frac{1}{2}x^2 + y$ 
+Endowment: $e^A = (e^A_x, e^A_y) = (4, 5000)$</p>
+
+<p>Agent B:
+Welfare: $W^B(x, y) = 30x - \frac{1}{2}x^2 + y$ 
+Endowment: $e^B = (e^B_x, e^B_y) = (80, 1000)$</p>
+
+<p>What is the equilibrium that maximizes utility?</p>
+
+<ul>
+  <li>
+    <p>Exogenous variables:
+  Welfare, endowments</p>
+  </li>
+  <li>
+    <p>Endogenous variables:</p>
+    <ul>
+      <li>$P_x, P_y, x^A, y^A, x^B, y^B$</li>
+      <li>$P_x, P_y$ are prices</li>
+      <li>This is what gets decided during the equilibrium computation.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="optimization-equations">Optimization Equations</h2>
+
+<p>$Max_{x,y}$ $W^A(x,y)$
+    s.t. $P_x x + P_y y &lt;= P_x 4 + P_y 5000$</p>
+
+<p>$Max_{x,y}$ $W^B(x,y)$
+    s.t. $P_x x + P_y y &lt;= P_x 80 + P_y 1000$</p>
+
+<p>The amount of goods equals the amount of endowments of the two agents.
+<script type="math/tex">x^A + x^B = e^A_x + e^B_x = 80 + 4 = 84 \tag{1}</script>
+<script type="math/tex">y^A + y^B = e^A_y + e^B_y = 6000 \tag{2}</script></p>
+
+<p>Since both agents are optimizing, they won’t waste money, so the $&lt;=$ becomes and equality.
+<script type="math/tex">P_x x^A + P_y y^A = 4P_x + 5000 P_y \tag{3}</script>
+<script type="math/tex">P_x x^B + P_y y^B = 80P_x + 1000 P_y \tag{4}</script></p>
+
+<p>The marginal utility equations below show the value at which each agent is indifferent.</p>
+
+<script type="math/tex; mode=display">\frac{MU^A_x(x^A, y^A)}{P_x} = \frac{\frac{\partial W^A}{\partial x}}{P_x} = \frac{100 -x^A}{P_x} = \frac{MU^A_y(x^A, y^A)}{P_y} = \frac{\frac{\partial W^A}{\partial y}}{P_y} = \frac{1}{P_y} \tag{5}</script>
+
+<script type="math/tex; mode=display">\frac{MU^B_x(x^B, y^B)}{P_x} = \frac{\frac{\partial W^B}{\partial x}}{P_x} = \frac{30 -x^B}{P_x} = \frac{MU^B_y(x^B, y^B)}{P_y} = \frac{\frac{\partial W^B}{\partial y}}{P_y} = \frac{1}{P_y} \tag{6}</script>
+
+<figure class="image" style="font-style: italic;">
+	<img src="../assets/img/2020-10-15-YFM-03/2020-10-16-22-28-43.png" alt="Optimal is when the slope of the budget set is equal to slope of the indiff curve" style="width: 100%;" />
+	<figcaption style="width: 50%; padding-left: 25%">Optimal is when the slope of the budget set is equal to slope of the indiff curve</figcaption>
+</figure>
+
+<blockquote>
+  <p>Arrow/Debreu/Mckenzie: This system of economics equations <strong>always</strong> has a solution. Based on Nash equilibrium and diminishing marginal utility.</p>
+</blockquote>
+
+<h2 id="ok-lets-solve-it-now">Ok lets solve it now:</h2>
+
+<blockquote>
+  <p>Walras 1871: Doubling the prices won’t change the equilibrium. The only thing that matters is relative prices.</p>
+</blockquote>
+
+<p><strong>Start with 6 eq, 6 unknowns:</strong></p>
+
+<p>Assume $P_y =1$.</p>
+
+<p>Assume equations 1,3,4,5,6 are all satisfied. Then equation 2 has to be satisfied since everyone, collectively is spending all their money.</p>
+
+<p><strong>Now 5 eq, 5 unknowns:</strong></p>
+
+<p>Fix $P_y =1$. 
+Then by eq 5, $\frac{100-x^B}{P_x} = 1$, so $x^A = 100-P_x$.</p>
+
+<p>And by eq 6, $\frac{30-x^B}{P_x} = 1$, so $x^B = 30 - P_x$</p>
+
+<p>Now since $x^A + x^B = 84$ then $P_x = 23$. Therefore $x^A = 77$ and $x^B = 7$.</p>
+
+<p>Plug these into eq 3,4 to figure out $y^A, y^B$.</p>
+
+<h1 id="another-example-with-2-agents">Another example with 2 agents</h1>
+
+<blockquote>
+  <p>Cobb-Douglas Utility Function: Each person spends a <strong>fixed</strong> proportion of their money on each of the goods. Sum of logs.</p>
+</blockquote>
+
+<p>Agent C:</p>
+<ul>
+  <li>Welfare: $W^C(x, y) = \frac{3}{4}log(x) + \frac{1}{2}log(y)$</li>
+  <li>Endowment: $e^C = (e^C_x, e^C_y) = (2, 1)$</li>
+</ul>
+
+<p>Agent D:</p>
+<ul>
+  <li>Welfare: $W^D(x, y) = \frac{2}{3}log(x) + \frac{1}{3}log(y)$</li>
+  <li>Endowment: $e^C = (e^C_x, e^C_y) = (1, 2)$</li>
+</ul>
+
+<h2 id="equations">Equations</h2>
+
+<p><strong>Supply/Demand:</strong></p>
+
+<script type="math/tex; mode=display">x^C + x^D = e^C_x + e^D_x = 2 + 1 = 3 \tag{1}</script>
+
+<script type="math/tex; mode=display">y^C + y^D = e^C_y + e^D_y = 1 + 2 = 3 \tag{2}</script>
+
+<p><strong>Budget Set:</strong></p>
+
+<script type="math/tex; mode=display">P_x x^C + P_y y^C = 2P_x + Py \tag{3}</script>
+
+<script type="math/tex; mode=display">P_x x^D + P_y y^D = P_x + 2Py \tag{4}</script>
+
+<p><strong>Marginal Utility:</strong></p>
+
+<script type="math/tex; mode=display">\frac{MU_x(x^C, y^C)}{P_x} = \frac{\frac{3}{4}\frac{1}{x^C}}{P_x} = \frac{\frac{1}{4}\frac{1}{y^C}}{P_y} = \frac{MU_x(x^C, y^C)}{P_y} \tag{5}</script>
+
+<script type="math/tex; mode=display">\frac{MU_x(x^D, y^D)}{P_x} = \frac{\frac{2}{3}\frac{1}{x^D}}{P_x} = \frac{\frac{1}{3}\frac{1}{y^D}}{P_y} = \frac{MU_x(x^D, y^D)}{P_y} \tag{5}</script>
+
+<h2 id="solve-this-now">Solve this now</h2>
+
+<ol>
+  <li>
+    <p>Assume $P_y = 1$. Solve eq. 5 for $x^C $.</p>
+  </li>
+  <li>$\frac{3}{4} \frac{1}{P_x x^C} = \frac{1}{4} \frac{1}{P_y y^C}$.
+    <ul>
+      <li>So person C will spend $\frac{3}{4}$ on $x$ and $\frac{1}{4}$ on $y$.</li>
+      <li>Similarly, person D will spend $\frac{2}{3}$ on $x$ and $\frac{1}{3}$ on $y$.</li>
+    </ul>
+  </li>
+  <li>The amount of money person C spends on $x$ is 3/4 of his income. And Person D is 2/3 of income
+    <ul>
+      <li>$P_x x^C = \frac{3}{4}[2P_x + P_y]$</li>
+      <li>$P_x x^D = \frac{2}{3}[2P_x + P_y]$</li>
+      <li>Since $P_y = 1$, then $x^C + x^D = 3$ Solving these equations, we get $P_x = \frac{5}{2}$, $x^C = \frac{9}{5}$ and $x^D = \frac{6}{5}$</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="solving-the-linear-system">Solving the linear system</h1>
+
+<p>These problems are solveable through least square minimization of a  linear system $Ax = b$</p>
+
+<p>Unknowns are $(P_x, P_y, x^C, x^D, y^C, y^D)$. Equations and constraints are encoded into lhs $A$ and the rhs $b$.</p>
+
+    </div>
+</div>
+
+        <div class="footer">
+            <p title="Took this theme from here: http://erictreacy.me">&copy; 2018 </p>
+        </div>
+    </div>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+</body>
+
+</html>
