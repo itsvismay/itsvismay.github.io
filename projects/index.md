@@ -10,7 +10,7 @@ layout: projects
 </ul>
 
 <h1 class="about__title">Fun Projects</h1>
-<ul>
+<!-- <ul>
 	<li><p><a href="https://www.designeering.studio">Designeering</a></p></li>
-</ul>
+</ul> -->
 
