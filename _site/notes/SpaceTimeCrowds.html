@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>itsvismay.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Space-Time Crowds Working Draft</title>
+    
+
+    <meta name="description" content="me">
+
+    
+
+    <link rel="icon" href="/assets/img/blog.png">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Roboto|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Space-Time Crowds Working Draft | Itsvismay.Github.Io</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Space-Time Crowds Working Draft" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Abstract" />
+<meta property="og:description" content="Abstract" />
+<link rel="canonical" href="http://localhost:4000/notes/SpaceTimeCrowds" />
+<meta property="og:url" content="http://localhost:4000/notes/SpaceTimeCrowds" />
+<meta property="og:site_name" content="Itsvismay.Github.Io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-11-22T18:00:00-06:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/notes/SpaceTimeCrowds"},"url":"http://localhost:4000/notes/SpaceTimeCrowds","headline":"Space-Time Crowds Working Draft","description":"Abstract","dateModified":"2020-11-22T18:00:00-06:00","datePublished":"2020-11-22T18:00:00-06:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+    <h1><a href="/">Home</a></h1>
+    <ul>
+        
+        <li>
+            <a href="/me">About</a>
+        </li>
+        
+        <li>
+            <a href="/projects">Projects</a>
+        </li>
+        
+        <li>
+            <a href="/notes">Notes</a>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="post">
+
+    <div class="post__title">
+    	<h1>Space-Time Crowds Working Draft</h1>
+    </div>
+    <div class="post__subtitle">
+      <h2></h2>
+    </div>
+    <div class="post__date">
+    	<p>November 22, 2020</p>
+    </div>
+    <div class="post__meta">
+    	<p></p>
+    </div>
+    <div class="post__content"?>
+        <h1 id="abstract">Abstract</h1>
+
+<h1 id="intro">Intro</h1>
+
+<h1 id="related-works">Related Works</h1>
+
+<h2 id="game-theory--econ--equilibrium">Game Theory / Econ / Equilibrium</h2>
+<ul>
+  <li>Papadimitrou, Roughgarden - Polynomial Time Corr. Equilibrium for many different types of games</li>
+  <li>Aumann -  Correlated Equlibrium for N-player games</li>
+</ul>
+
+<h2 id="crowds">Crowds</h2>
+<ul>
+  <li>Trueille 2006 - Continuum Crowds</li>
+  <li>Kapadia 2015 - book</li>
+  <li>Pelechano 2016 - overview of several approaches, social dynamics</li>
+  <li>Karamazous 2018 - comparing different algorithms</li>
+  <li>Narain 2009 - continuum based approach, high densities</li>
+  <li>Karamazous 2017 - implicit crowds, large timesteps, stable</li>
+  <li>Hughes 2008 - vision based crowds</li>
+  <li>Boids 1987</li>
+  <li>Golas 2013 - Long range collision avoidance. Gradient based.</li>
+  <li>Holden 2017 - Data driven approach to motion</li>
+  <li>Lerner 2007 - Data driven</li>
+  <li>Terzopolous 2018 - PBD crowds</li>
+  <li>Warp Driver 2016 - vision based</li>
+  <li>Van De Berg 2011 - collision free velocity updates through geometry</li>
+</ul>
+
+<h2 id="rods">Rods</h2>
+<ul>
+  <li>Reconfigurables 2017 - detecting and modifying colliding geometries using space-time methods</li>
+  <li>Witkin space-time constraints -</li>
+  <li>Popovic ? Cant find this</li>
+</ul>
+
+<h2 id="collisions">Collisions</h2>
+<ul>
+  <li>Barnes Hut</li>
+  <li>Li 2020 - Incremental Potential Contact</li>
+</ul>
+
+<h1 id="method">Method</h1>
+<p>Our central assumption is that from all the paths available to an agent, $s_a, s_b, s_c, …$, the individual will choose a path $s* = [x_0,…,x_n] \epsilon R^{2xn}$ which optimizes a utility function. This utility function might include a number of different metrics such as length, or distance to obstacles, etc… The infinite number of paths available to an agent will each correspond to a single utility value. However, this injective mapping from path to utility is insufficient since agents also move through time. Therefore we introduce a third dimension for time and the notion of a space-time curve $[x_0,t_0, ….,x_n, t_n]$ which denotes agent paths through time. This generalized notion of agent paths through time, denoted as space-time curves, also correspond to a single utility. Our objective is to maximize agent utility by finding the optimal path through time.</p>
+
+<p>We use discrete calculus of variations to find the optimal curve through space time. Our problem is similar to the derivation for the Euler-Lagrange equations, however in our case, the end boundary condition is not <strong>fixed</strong> in time; our agents are merely bounded by a max time. Trying to solve for the optimal curve in space-time using continuous calculus of variations without having a fixed end time leads to very complex and incomprehensible second order differential equations, with strange boundary conditions. However, in the discrete CoV case, we get intuitive results.</p>
+
+<p>The first step is to discretize the space-time curves into vertices</p>
+
+<p>The discrete Lagrangian for each segment of the rod (just kinetic energy) can be written as</p>
+
+<script type="math/tex; mode=display">L = \frac{1}{2}m(\frac{x_1 - x_0}{t_1 - t_0})^2 \Delta t</script>
+
+<p>where $m$ is the mass, $x_i$ and $t_i$ are the spatial and time coordinates of the two ends of the piece-wise constant segment. For each segment we can interpolate $q(s) = q_0 +  s (q_1 - q_0)$. So, individually for space and time,</p>
+
+<script type="math/tex; mode=display">x = x_0 + s(x_1 - x_0) = x_0 + s\Delta x</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">t = t_0 + s(t_1 - t_0) = t_0 + s\Delta t</script>
+
+<p>So, after discretizing the curve, hamilton’s principle of least action can be written as</p>
+
+<script type="math/tex; mode=display">S = \sum_{e=0}^{|e|-1} L(\Delta s, q_e, q_{e+1}) = \sum_{e=1}^{|e|-1} \frac{1}{2}m(\frac{x_{e+1} - x_e}{t_{e+1} - t_e})^2 (t_{e+1} - t_e)\tag{1}</script>
+
+<p>Discrete CoV requires that the variation for the optimal rod be 0, so</p>
+
+<script type="math/tex; mode=display">\delta S = \delta \sum_{e=0}^{e = n-1} [D_2 L(\Delta s, q_e, q_{e+1})\cdot \delta q_e + D_3 L(\Delta s, q_e, q_{e+1})\cdot\delta q_{e+1}] = 0 \tag{2}</script>
+
+<h2 id="boundary-conditions">Boundary Conditions</h2>
+<p>After re-arranging and accounting for B.C.</p>
+
+<script type="math/tex; mode=display">\delta S = \delta \sum_{e=1}^{e = n-1} [D_3 L(\Delta s, q_{e-1}, q_e) + D_2 L(\Delta s, q_e, q_{e+1})]\cdot\delta q_{e} \\ + D_2 L(\Delta s, q_0, q_1)\cdot \delta q_0 + D_3 L(\Delta s, q_{n -1}, q_{n})\cdot \delta q_{n}  = 0 \tag{3}</script>
+
+<p>Since, we don’t want to fix the endpoint of the curve in time (only in space), our boundary condition is a bit funny, $\delta t_{n}  = unknown$, which means that $D_3 L(\Delta s, q_{n -1}, q_n) = 0$ wrt $t_n$.</p>
+
+<p>So we get the regular boundary conditions $\delta q_0 = 0$ (since it is known), $\delta x_n = 0$ (since its known), and finally, since $\delta t_n = ?$,</p>
+
+<script type="math/tex; mode=display">\frac{-m (x_{n} - x_{n-1})^2}{2(t_{n} - t_{n -1})^2} = 0</script>
+
+<p>which means that the agent should stop by $t_n$.</p>
+
+<h2 id="minimizing-the-functional">Minimizing the functional</h2>
+
+<p>Since variation $\delta S = 0$ at the optimal function, we know the gradients</p>
+
+<script type="math/tex; mode=display">D_3 L(\Delta s, q_{e-1}, q_e) + D_2 L(\Delta s, q_e, q_{e+1}) = \frac{\partial L(\Delta s, q_{e-1}, q_e)}{\partial q_e} + \frac{\partial L(\Delta s, q_e, q_{e+1})}{\partial q_e} = 0</script>
+
+<p>are zero. This will need to be done component-wise, since $q = [x, t]$.</p>
+
+<script type="math/tex; mode=display">\frac{\partial L(\Delta s, q_{e-1}, q_e)}{\partial q_e} + \frac{\partial L(\Delta s, q_e, q_{e+1})}{\partial q_e} = [\frac{\partial L(\Delta s, q_{e-1}, q_e)}{\partial x_e}, \frac{\partial L(\Delta s, q_{e-1}, q_e)}{\partial t_e}] + [\frac{\partial L(\Delta s, q_e, q_{e+1})}{\partial x_e}, \frac{\partial L(\Delta s, q_e, q_{e+1})}{\partial t_e}]</script>
+
+<p>then</p>
+
+<script type="math/tex; mode=display">[\frac{m(x_e - x_{e-1})}{t_e - t_{e-1}}, \frac{m(x_e - x_{e-1})^2}{2(t_e - t_{e-1})^2}] + [\frac{-m(x_{e+1} - x_e)}{t_{e+1} - t_e}, \frac{-m(x_{e+1} - x_e)^2}{2(t_{e+1} - t_{e})^2}] = 0</script>
+
+<p>so</p>
+
+<script type="math/tex; mode=display">[\frac{m(x_e - x_{e-1})}{t_e - t_{e-1}}, \frac{m(x_e - x_{e-1})^2}{2(t_e - t_{e-1})^2}] = [\frac{m(x_{e+1} - x_e)}{t_{e+1} - t_e}, \frac{m(x_{e+1} - x_e)^2}{2(t_{e+1} - t_{e})^2}]</script>
+
+<p>which means that the kinetically optimal path for the agent is to have constant velocity until it reaches the end position. Which makes sense.</p>
+
+
+    </div>
+</div>
+
+        <div class="footer">
+            <p title="Took this theme from here: http://erictreacy.me">&copy; 2018 </p>
+        </div>
+    </div>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+</body>
+
+</html>
