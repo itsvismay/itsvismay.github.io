@@ -44,6 +44,6 @@ layout: projects
   width: 150px;">
 	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
 		<strong style="font-weight:bold">Designeering</strong> <br>
-		<a href="https://www.designeering.studio">Project Page</a>
+		<a href="https://www.designeering.pythonanywhere.com">Project Page</a>
 	</span>
 </p>
