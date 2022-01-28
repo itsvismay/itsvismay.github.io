@@ -55,7 +55,6 @@ layout: projects
   width: 150px;">
 	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
 		<strong style="font-weight:bold">Designeering</strong> <br>
-		<br>
 		A little app to design your own rings.
 		<br>
 		<a href="https://designeering.pythonanywhere.com/">Project Page</a>
