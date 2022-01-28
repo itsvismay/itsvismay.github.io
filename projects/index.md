@@ -5,6 +5,20 @@ layout: projects
 
 <h1 class="about__title">Research Papers</h1>
 <p style="font-size:11pt">
+	<img src="../assets/img/index/tightcrowds.png" alt="spaceTimePaths" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;">
+	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
+		<strong style="font-weight:bold">Multi-Agent Path Planning With Asymmetric Interactions in Tight Spaces</strong> <br>
+		Vismay Modi, Yixin Chen, Abhishek Madan, Shinjiro Sueda, David I. W. Levin
+		<br>
+		<em style="font-style: italic;">In Submission</em> <br>
+		<a href="../assets/pdfs/crowds/submission.pdf">Paper</a> | <a href="../assets/pdfs/crowds/supplementary.pdf">Supplementary Materials</a>
+	</span>
+</p>
+<br>
+<p style="font-size:11pt">
 	<img src="../assets/img/index/emu.png" alt="emu" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
@@ -31,9 +45,6 @@ layout: projects
 		<a href="http://www.dgp.toronto.edu/projects/latent-space-dynamics/latent-space-dynamics-for-reduced-deformable-simulation-eurographics-2019-fulton-et-al.pdf">Paper</a> | <a href="https://www.dgp.toronto.edu/projects/latent-space-dynamics/">Project Page</a>
 	</span>
 </p>
-<!-- <p>
-	<a href="https://www.dgp.toronto.edu/projects/latent-space-dynamics/">Autodef:  Latent-space Dynamics for Reduced Deformable Simulation </a>
-</p> -->
 
 
 <h1 class="about__title">Fun Projects</h1>
@@ -44,6 +55,9 @@ layout: projects
   width: 150px;">
 	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
 		<strong style="font-weight:bold">Designeering</strong> <br>
-		<a href="https://www.designeering.pythonanywhere.com">Project Page</a>
+		<br>
+		A little app to design your own rings.
+		<br>
+		<a href="https://designeering.pythonanywhere.com/">Project Page</a>
 	</span>
 </p>
