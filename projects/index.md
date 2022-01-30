@@ -4,7 +4,7 @@ layout: projects
 ---
 
 <h1 class="about__title">Research Papers</h1>
-<p style="font-size:11pt">
+<!-- <p style="font-size:11pt;">
 	<img src="../assets/img/index/tightcrowds.png" alt="spaceTimePaths" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
@@ -17,7 +17,7 @@ layout: projects
 		<a href="../assets/pdfs/crowds/submission.pdf">Paper</a> | <a href="../assets/pdfs/crowds/supplementary.pdf">Supplementary Materials</a>
 	</span>
 </p>
-<br>
+<br> -->
 <p style="font-size:11pt">
 	<img src="../assets/img/index/emu.png" alt="emu" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
   border-radius: 4px;
