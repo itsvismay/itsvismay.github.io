@@ -1,29 +1,36 @@
 ---
-title: Converting crowds to springs
+title: mFem Crowd Energy
 date: 2022-02-12 19:00:00 -05:00 
 layout: post
 tags: research
 ---
 
-My basic agent energy is kinetic energy
+My basic agent energy for agent $a$ is kinetic energy
 
-$$ C^K = \frac{1}{2}m \sum_{i=0}^{i=n}\frac{\Delta x_i^2 + \Delta y_i^2 + \Delta z_i^2}{\Delta t_i} $$
+$$ E(q^a) = \frac{1}{2}m\sum_{i=1}^{i=n}\frac{(x(q_i) - x(q_{i-1}))^2 + (y(q_i) - y(q_{i-1}))^2 + (z(q_i) - z(q_{i-1}))^2}{(t(q_i) - t(q_{i-1}))} $$
 
-in a constrained optimization
+with equality constraints on the start and end points
 
-$$ s* = argmin \; C^K \\ 
-		x_0, y_0, t_0 = given\\
-		x_n, y_n = given
-		st. \; t_n \leq MaxTime $$
+$$A_{eq}q  = b_{eq}$$
+
+with inequality constraints on time intervals and end time
+
+$$Aq = b.$$
+
+To convert this into an mFEM format, we introduce edge lengthsh $s$ and $\lambda$ the lagrange multipliers as a variable.
+
+The continuous energy
+
+$$E = \int Psi(s(q)) - \lambda(q):(s(q) - Q(q))$$
+
+where $Q$ is some functiono that extracts lengths from the positions $q$. 
+
+In the discrete setting
+
+$$E = \sum_i \Psi(s_i) - \lambda:(s_i - Q(q_i)).$$
 
 
-Spring energy is 
 
-$$ C^S = \frac{1}{2}k\sum_{i=0}^{i=n}(\Delta x^2 + \Delta y^2 + \Delta z^2 + \Delta t^2) $$
 
-nonzero spring
 
-$$ \frac{1}{2}k \sum_{i=0}^{i=n}(\Delta x - l)^2 \\
-x_0, y_0, t_0 = given\\
-x_n, y_n, t_n = given$$ 
 
