@@ -29,6 +29,12 @@ In the discrete setting
 
 $$E = \sum_i \Psi(s_i) - \lambda:(s_i - Q(q_i)).$$
 
+The updates to the mFEM algorithm are the following:
+
+1. Remove the procruste step
+2. Constrained global solve for $q, \lamda$ using PGS
+3. Backsolve for s
+
 
 
 
