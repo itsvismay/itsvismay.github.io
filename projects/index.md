@@ -16,6 +16,31 @@ layout: projects
 		<em style="font-style: italic;">Under Review</em> <br>
 	</span>
 </p> -->
+<p style="font-size:11pt;">
+	<img src="../assets/img/index/questions.png" alt="underreview" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;">
+	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
+		<strong style="font-weight:bold">Simplicits: Simulating Implicit Objects</strong> <br>
+		Vismay Modi, Nick Sharp, Shinjiro Sueda, David I.W. Levin
+		<br>
+		<em style="font-style: italic;">Submission to TOG 2023</em> <br>
+	</span>
+</p>
+<br>
+<p style="font-size:11pt;">
+	<img src="../assets/img/index/questions.png" alt="underreview" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;">
+	<span style="max-width:calc(100% - 140px - 10px - 5px); display:inline-block; text-align:left; vertical-align:middle;">
+		<strong style="font-weight:bold">Learning Riemannian Metrics for Character Animation</strong> <br>
+		Sarah Kushner, Vismay Modi, Nina Miolane
+		<br>
+		<em style="font-style: italic;">Under Review at ICLR 2023</em> <br>
+	</span>
+</p>
 <br>
 <p style="font-size:11pt;">
 	<img src="../assets/img/index/tightcrowds.png" alt="spaceTimePaths" style="max-width:140px; vertical-align:middle; border: 1px solid #ddd;
@@ -26,7 +51,7 @@ layout: projects
 		<strong style="font-weight:bold">Multi-Agent Path Planning With Asymmetric Interactions in Tight Spaces</strong> <br>
 		Vismay Modi, Yixin Chen, Abhishek Madan, Shinjiro Sueda, David I. W. Levin
 		<br>
-		<em style="font-style: italic;">In Submission</em> <br>
+		<em style="font-style: italic;">Presented at SCA 2023</em> <br>
 		<a href="../assets/pdfs/crowds/submission.pdf">Paper</a> | <a href="../assets/pdfs/crowds/supplementary.pdf">Supplementary Materials</a>
 	</span>
 </p>
